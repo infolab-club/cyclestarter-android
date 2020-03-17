@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="collaborator_registration">Регистрация сотрудника</string>
+    <string name="register">Зарегистрировать</string>
+    <string name="full_name">ФИО</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="address">Адрес</string>
+    <string name="office">Офис</string>
+    <string name="success">Успешно!</string>
+    <string name="fail">Ошибка!</string>
+    <string name="fail_message">Пожалуйста попробуйте позже.</string>
+    <string name="result">Результат</string>
+</resources>

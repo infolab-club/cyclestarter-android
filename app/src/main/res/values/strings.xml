@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name" translatable="false">Ecohack</string>
+    <string name="welcome">Welcome!</string>
+    <string name="collaborator_registration">Collaborator registration</string>
+    <string name="register">Register</string>
+    <string name="full_name">Full name</string>
+    <string name="email" translatable="false">E-mail</string>
+    <string name="phone_number">Phone number</string>
+    <string name="address">Address</string>
+    <string name="office">Office</string>
+    <string name="success">Success!</string>
+    <string name="fail">Fail!</string>
+    <string name="fail_message">Please try again later.</string>
+    <string name="ok" translatable="false">Ok</string>
+    <string name="result">Result</string>
+</resources>
