@@ -21,6 +21,9 @@
 
 ---
 ### Разработчики
+
+:star: **Александр Кудинов** ([@AlexanderKudinov](https://github.com/AlexanderKudinov))
+
 :star: **Глеб Новиков** ([@gleb-novikov](https://github.com/gleb-novikov))
 
 ---
