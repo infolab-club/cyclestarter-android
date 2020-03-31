@@ -11,4 +11,7 @@
     <string name="fail">Ошибка!</string>
     <string name="fail_message">Пожалуйста попробуйте позже.</string>
     <string name="result">Результат</string>
+    <string name="collaborator">Сотрудник</string>
+    <string name="clear">Очистить</string>
+    <string name="ready">Готово</string>
 </resources>

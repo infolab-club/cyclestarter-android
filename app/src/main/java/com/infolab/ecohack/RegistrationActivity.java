@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 import com.infolab.ecohack.retrofit.ApiService;
 import com.infolab.ecohack.retrofit.Collaborator;
+import com.infolab.ecohack.retrofit.RetrofitTransactions;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,9 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Активити добавления нового сотрудника офиса.
  * @author Глеб Новиков
  */
-public class RegistrationActivity extends AppCompatActivity {
-    /** Ссылка на сервер. */
-    private static final String BASE_URL = "https://daniilor.pythonanywhere.com/";
+public class RegistrationActivity extends AppCompatActivity implements RegistrationCallBack {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,7 @@ public class RegistrationActivity extends AppCompatActivity {
      * Метод инициализации необходимых компонентов.
      */
     private void initializeActivity() {
-        /* Кнопка добавления сотрудника. */
+        //Кнопка добавления сотрудника
         Button buttonRegistration = findViewById(R.id.buttonRegister);
         buttonRegistration.setOnClickListener(onClickRegister);
     }
@@ -46,10 +45,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private View.OnClickListener onClickRegister = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            /* Получаем данные о сотруднике. */
-            Collaborator collaborator = getInputData();
-            /* Отправляем данные на сервер. */
-            postData(collaborator);
+            Collaborator collaborator = getInputData();  //Получаем данные о сотруднике
+            postData(collaborator);  //Отправляем данные на сервер
         }
     };
 
@@ -82,33 +79,15 @@ public class RegistrationActivity extends AppCompatActivity {
      * @param collaborator сотрудник офиса
      */
     private void postData(Collaborator collaborator){
-        Retrofit retrofit = new retrofit2.Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        ApiService service = retrofit.create(ApiService.class);
-        Call<Collaborator> call = service.addCollaborator(collaborator);
-
-        call.enqueue(new Callback<Collaborator>() {
-            /* Метод, вызываемый при успешной отправки данных. */
-            @Override
-            public void onResponse(Call<Collaborator> call, Response<Collaborator> response) {
-                goToResult(true);
-            }
-            /* Метод, вызываемый при неудачной отправки данных. */
-            @Override
-            public void onFailure(Call<Collaborator> call, Throwable t) {
-                Log.d("RETROFIT_ERROR", t.getMessage());
-                goToResult(false);
-            }
-        });
+        RetrofitTransactions.getInstance().addCollaborator(collaborator, this, this);
     }
 
     /**
      * Метод перехода на активность с результатом регистрации сотрудника.
      * @param isSuccess успешна ли прошла регистрация
      */
-    private void goToResult(boolean isSuccess) {
+    @Override
+    public void goToResult(boolean isSuccess) {
         Intent intent = new Intent(this, ResultActivity.class);
         /* Отправка данных с результатом добавления. */
         intent.putExtra("result", isSuccess);

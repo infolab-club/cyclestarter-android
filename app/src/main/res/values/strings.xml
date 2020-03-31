@@ -13,4 +13,7 @@
     <string name="fail_message">Please try again later.</string>
     <string name="ok" translatable="false">Ok</string>
     <string name="result">Result</string>
+    <string name="collaborator">Collaborator</string>
+    <string name="clear">Clear</string>
+    <string name="ready">Ready</string>
 </resources>

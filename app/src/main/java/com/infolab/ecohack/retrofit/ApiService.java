@@ -1,7 +1,11 @@
 package com.infolab.ecohack.retrofit;
 
+import java.util.HashMap;
+
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 /**
@@ -15,5 +19,11 @@ public interface ApiService {
      * @param collaborator сотрудник офиса
      */
     @POST("add_user")
-    Call<Collaborator> addCollaborator(@Body Collaborator collaborator);
+    Call<ResponseBody> addCollaborator(@Body Collaborator collaborator);
+    @POST("get_box")
+    Call<ResponseBody> getBox(@Body HashMap hashMap);
+    @POST("fill_box")
+    Call<ResponseBody> fillBox(@Body HashMap hashMap);
+    @POST("fill_box")
+    Call<ResponseBody> clearBox(@Body HashMap hashMap);
 }

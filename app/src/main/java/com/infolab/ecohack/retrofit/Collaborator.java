@@ -25,6 +25,8 @@ public class Collaborator {
     @SerializedName("room")
     private String office;
 
+    public Collaborator() {}
+
     public Collaborator(String fullName, String email, String phoneNumber, String address,
                         String office) {
         this.fullName = fullName;
@@ -51,6 +53,7 @@ public class Collaborator {
     }
 
     public String getPhoneNumber() {
+        if (phoneNumber == null) return "";
         return phoneNumber;
     }
 

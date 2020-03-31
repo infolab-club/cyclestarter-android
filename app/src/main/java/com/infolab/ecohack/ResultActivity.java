@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.infolab.ecohack.retrofit.Collaborator;
-
 /**
  * Активити с результатом процесса добавления сотрудника офиса.
  * @author Глеб Новиков
@@ -42,7 +40,10 @@ public class ResultActivity extends AppCompatActivity {
     private View.OnClickListener onClickOkResult = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            goToVolunteer();
+            if (isSuccess)
+                goToVolunteer();
+            else
+                goToFirstActivity();
         }
     };
 
@@ -72,5 +73,14 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent = new Intent(this, VolunteerActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+        finish();
+    }
+
+    // переход на активити регистрации
+    private void goToFirstActivity() {
+        Intent intent = new Intent(this, FirstActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
