@@ -1,4 +1,4 @@
-package com.infolab.ecohack;
+package club.infolab.recyclingstarter;
 
 import org.junit.Test;
 

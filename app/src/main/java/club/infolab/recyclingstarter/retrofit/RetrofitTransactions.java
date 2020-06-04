@@ -1,11 +1,10 @@
-package com.infolab.ecohack.retrofit;
+package club.infolab.recyclingstarter.retrofit;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.util.Log;
 
-import com.infolab.ecohack.RegistrationCallBack;
-import com.infolab.ecohack.RegistrationController;
+import club.infolab.recyclingstarter.registration.RegistrationCallback;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -18,8 +17,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitTransactions {
-
-    //Ссылка на сервер
+    /** Ссылка на сервер. **/
     private static final String BASE_URL = "https://daniilor.pythonanywhere.com/";
     private static RetrofitTransactions retrofitTransactions;
 
@@ -28,14 +26,13 @@ public class RetrofitTransactions {
     }
 
     public static RetrofitTransactions getInstance() {
-        if (retrofitTransactions == null)
+        if (retrofitTransactions == null) {
             retrofitTransactions = new RetrofitTransactions();
+        }
         return retrofitTransactions;
     }
 
-
-
-    public void addCollaborator(Collaborator collaborator, RegistrationCallBack callBack, Context context) {
+    public void addCollaborator(Collaborator collaborator, RegistrationCallback callBack) {
         Retrofit retrofit = new retrofit2.Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -49,24 +46,24 @@ public class RetrofitTransactions {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
                     try {
-                        Log.d("retrofit", response.body().string());
+                        Log.d("retrofit", response.body() != null ?
+                                response.body().string() : "null");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                     getBox(collaborator.getPhoneNumber());
-                    callBack.goToResult(true);
-                    //RegistrationController.getInstance(context).registrate();
+                    callBack.onRegistrationResult(true);
                 }
             }
+
             /* Метод, вызываемый при неудачной отправки данных. */
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 t.printStackTrace();
-                callBack.goToResult(false);
+                callBack.onRegistrationResult(false);
             }
         });
     }
-
 
     public void getBox(String phone) {
         Retrofit retrofit = new Retrofit.Builder()
@@ -83,12 +80,11 @@ public class RetrofitTransactions {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    if (response.isSuccessful()) {
-                        try {
-                            Log.d("retrofit", response.body().string());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                    try {
+                        Log.d("retrofit", response.body() != null ?
+                                response.body().string() : "null");
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
                 }
             }
@@ -99,7 +95,6 @@ public class RetrofitTransactions {
             }
         });
     }
-
 
     public void fillBox(int boxId, Context context) {
         Retrofit retrofit = new Retrofit.Builder()
@@ -117,7 +112,8 @@ public class RetrofitTransactions {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
                     try {
-                        Log.d("retrofit", response.body().string());
+                        Log.d("retrofit", response.body() != null ?
+                                response.body().string() : "null");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -132,7 +128,6 @@ public class RetrofitTransactions {
             }
         });
     }
-
 
     public void clearBox(int boxId, Context context) {
         Retrofit retrofit = new Retrofit.Builder()
@@ -150,7 +145,8 @@ public class RetrofitTransactions {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
                     try {
-                        Log.d("retrofit", response.body().string());
+                        Log.d("retrofit", response.body() != null ?
+                                response.body().string() : "null");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

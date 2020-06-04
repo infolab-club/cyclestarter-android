@@ -1,19 +1,13 @@
 <resources>
-    <string name="app_name" translatable="false">Ecohack</string>
-    <string name="welcome">Welcome!</string>
-    <string name="collaborator_registration">Collaborator registration</string>
-    <string name="register">Register</string>
-    <string name="full_name">Full name</string>
-    <string name="email" translatable="false">E-mail</string>
-    <string name="phone_number">Phone number</string>
-    <string name="address">Address</string>
-    <string name="office">Office</string>
-    <string name="success">Success!</string>
-    <string name="fail">Fail!</string>
-    <string name="fail_message">Please try again later.</string>
-    <string name="ok" translatable="false">Ok</string>
-    <string name="result">Result</string>
-    <string name="collaborator">Collaborator</string>
-    <string name="clear">Clear</string>
-    <string name="ready">Ready</string>
+    <string name="app_name" translatable="false">Recycling Starter</string>
+    <string name="header_registration">Collaborator registration</string>
+    <string name="button_register">Register</string>
+    <string name="input_full_name">Full name</string>
+    <string name="input_email" translatable="false">E-mail</string>
+    <string name="input_phone_number">Phone number</string>
+    <string name="input_address">Address</string>
+    <string name="input_office">Office</string>
+    <string name="header_user">Collaborator</string>
+    <string name="button_box_clear">Clear</string>
+    <string name="button_box_done">Done</string>
 </resources>

@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome">Добро пожаловать!</string>
-    <string name="collaborator_registration">Регистрация сотрудника</string>
-    <string name="register">Зарегистрировать</string>
-    <string name="full_name">ФИО</string>
-    <string name="phone_number">Номер телефона</string>
-    <string name="address">Адрес</string>
-    <string name="office">Офис</string>
-    <string name="success">Успешно!</string>
-    <string name="fail">Ошибка!</string>
-    <string name="fail_message">Пожалуйста попробуйте позже.</string>
-    <string name="result">Результат</string>
-    <string name="collaborator">Сотрудник</string>
-    <string name="clear">Очистить</string>
-    <string name="ready">Готово</string>
+    <string name="header_registration">Регистрация сотрудника</string>
+    <string name="button_register">Зарегистрировать</string>
+    <string name="input_full_name">ФИО</string>
+    <string name="input_phone_number">Номер телефона</string>
+    <string name="input_address">Адрес</string>
+    <string name="input_office">Офис</string>
+    <string name="header_user">Сотрудник</string>
+    <string name="button_box_clear">Запросить очистку</string>
+    <string name="button_box_done">Подтвердить очистку</string>
 </resources>

@@ -1,27 +1,23 @@
-package com.infolab.ecohack.retrofit;
+package club.infolab.recyclingstarter.retrofit;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Класс сотрудника офиса.
- * @author Глеб Новиков
  */
 public class Collaborator {
-    // TODO: Изменить название "name" на "full_name".
     @SerializedName("name")
     private String fullName;
 
     @SerializedName("email")
     private String email;
 
-    // TODO: Изменить название "phone" на "phone_number".
     @SerializedName("phone")
     private String phoneNumber;
 
     @SerializedName("address")
     private String address;
 
-    // TODO: Изменить название "room" на "office".
     @SerializedName("room")
     private String office;
 
