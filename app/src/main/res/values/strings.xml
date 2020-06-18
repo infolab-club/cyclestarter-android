@@ -10,4 +10,10 @@
     <string name="header_user">Collaborator</string>
     <string name="button_box_clear">Clear</string>
     <string name="button_box_done">Done</string>
+
+    <!--    Окно авторизации    -->
+    <string name="authorization_header">Authorization</string>
+    <string name="input_password">Password</string>
+    <string name="link_register">Don\'t have an account yet? Registration…</string>
+    <string name="button_login">Log in</string>
 </resources>

@@ -9,4 +9,10 @@
     <string name="header_user">Сотрудник</string>
     <string name="button_box_clear">Запросить очистку</string>
     <string name="button_box_done">Подтвердить очистку</string>
+
+<!--    Окно авторизации    -->
+    <string name="authorization_header">Авторизация</string>
+    <string name="input_password">Пароль</string>
+    <string name="link_register">Ещё нет аккаунта? Регистрация…</string>
+    <string name="button_login">Войти</string>
 </resources>
